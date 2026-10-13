@@ -1,0 +1,7 @@
+path: E:/SpainWork/ConferencePaper/Dataset_YOLO
+train: images/train
+val: images/val
+test: images/test
+
+nc: 8
+names: ['Ancylostoma Spp', 'Ascaris Lumbricoides', 'Enterobius Vermicularis', 'Fasciola Hepatica', 'Hymenolepis', 'Schistosoma', 'Taenia Sp', 'Trichuris Trichiura']

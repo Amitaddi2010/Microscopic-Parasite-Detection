@@ -1,0 +1,14 @@
+names:
+- Ancylostoma Spp
+- Ascaris Lumbricoides
+- Enterobius Vermicularis
+- Fasciola Hepatica
+- Hymenolepis
+- Schistosoma
+- Taenia Sp
+- Trichuris Trichiura
+nc: 8
+path: E:/SpainWork/ConferencePaper/Dataset_YOLO
+test: E:\SpainWork\ConferencePaper\single_test.txt
+train: images/train
+val: images/val

@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary and Microsoft Word lock files
+~$*
+*.tmp
+*.bak
+
+# YOLO label cache files
+*.cache
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Large pre-trained checkpoint weights (downloadable via Ultralytics)
+*.pt
+
+# Datasets (downloadable via Roboflow / convert_dataset.py)
+Dataset/
+Dataset_YOLO/

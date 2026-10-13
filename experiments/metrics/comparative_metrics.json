@@ -1,0 +1,165 @@
+{
+    "detection_benchmarks": [
+        {
+            "model_name": "RT-DETR-L",
+            "family": "Transformer (DETR)",
+            "reference": "Lv et al., CVPR 2024",
+            "params_m": 32.0,
+            "gflops": 105.4,
+            "latency_ms": 25.0,
+            "fps": 40.0,
+            "mAP50": 0.918,
+            "mAP50_95": 0.7732,
+            "precision": 0.8993,
+            "recall": 0.8573,
+            "f1": 0.8778,
+            "per_class_ap50": {
+                "Ancylostoma Spp": 0.8698,
+                "Ascaris Lumbricoides": 0.8987,
+                "Enterobius Vermicularis": 0.9821,
+                "Fasciola Hepatica": 0.8224,
+                "Hymenolepis": 0.9583,
+                "Schistosoma": 0.9417,
+                "Taenia Sp": 0.9202,
+                "Trichuris Trichiura": 0.9508
+            },
+            "per_class_map50_95": {
+                "Ancylostoma Spp": 0.7677,
+                "Ascaris Lumbricoides": 0.7701,
+                "Enterobius Vermicularis": 0.7986,
+                "Fasciola Hepatica": 0.6868,
+                "Hymenolepis": 0.8508,
+                "Schistosoma": 0.7913,
+                "Taenia Sp": 0.7504,
+                "Trichuris Trichiura": 0.7701
+            }
+        },
+        {
+            "model_name": "YOLO11s",
+            "family": "Modern CNN",
+            "reference": "Ultralytics, 2024",
+            "params_m": 9.4,
+            "gflops": 21.4,
+            "latency_ms": 10.7,
+            "fps": 93.9,
+            "mAP50": 0.8833,
+            "mAP50_95": 0.7289,
+            "precision": 0.8531,
+            "recall": 0.7917,
+            "f1": 0.8213,
+            "per_class_ap50": {
+                "Ancylostoma Spp": 0.7847,
+                "Ascaris Lumbricoides": 0.8458,
+                "Enterobius Vermicularis": 0.9708,
+                "Fasciola Hepatica": 0.8093,
+                "Hymenolepis": 0.9038,
+                "Schistosoma": 0.892,
+                "Taenia Sp": 0.9134,
+                "Trichuris Trichiura": 0.9463
+            },
+            "per_class_map50_95": {
+                "Ancylostoma Spp": 0.6991,
+                "Ascaris Lumbricoides": 0.7235,
+                "Enterobius Vermicularis": 0.7563,
+                "Fasciola Hepatica": 0.6515,
+                "Hymenolepis": 0.7907,
+                "Schistosoma": 0.7123,
+                "Taenia Sp": 0.7304,
+                "Trichuris Trichiura": 0.7674
+            }
+        },
+        {
+            "model_name": "YOLOv8s",
+            "family": "Standard CNN Baseline",
+            "reference": "Jocher et al., 2023",
+            "params_m": 11.1,
+            "gflops": 28.4,
+            "latency_ms": 11.5,
+            "fps": 86.6,
+            "mAP50": 0.8774,
+            "mAP50_95": 0.7313,
+            "precision": 0.8861,
+            "recall": 0.7789,
+            "f1": 0.829,
+            "per_class_ap50": {
+                "Ancylostoma Spp": 0.8015,
+                "Ascaris Lumbricoides": 0.821,
+                "Enterobius Vermicularis": 0.9652,
+                "Fasciola Hepatica": 0.8112,
+                "Hymenolepis": 0.9188,
+                "Schistosoma": 0.8419,
+                "Taenia Sp": 0.929,
+                "Trichuris Trichiura": 0.9307
+            },
+            "per_class_map50_95": {
+                "Ancylostoma Spp": 0.6927,
+                "Ascaris Lumbricoides": 0.712,
+                "Enterobius Vermicularis": 0.7776,
+                "Fasciola Hepatica": 0.6656,
+                "Hymenolepis": 0.7963,
+                "Schistosoma": 0.6973,
+                "Taenia Sp": 0.7538,
+                "Trichuris Trichiura": 0.7547
+            }
+        },
+        {
+            "model_name": "YOLO11n",
+            "family": "Ultra-compact Edge CNN",
+            "reference": "Ultralytics, 2024",
+            "params_m": 2.58,
+            "gflops": 6.4,
+            "latency_ms": 10.9,
+            "fps": 91.8,
+            "mAP50": 0.8682,
+            "mAP50_95": 0.7192,
+            "precision": 0.8686,
+            "recall": 0.8128,
+            "f1": 0.8398,
+            "per_class_ap50": {
+                "Ancylostoma Spp": 0.632,
+                "Ascaris Lumbricoides": 0.8291,
+                "Enterobius Vermicularis": 0.9649,
+                "Fasciola Hepatica": 0.8119,
+                "Hymenolepis": 0.9285,
+                "Schistosoma": 0.9141,
+                "Taenia Sp": 0.9257,
+                "Trichuris Trichiura": 0.9392
+            },
+            "per_class_map50_95": {
+                "Ancylostoma Spp": 0.5426,
+                "Ascaris Lumbricoides": 0.7209,
+                "Enterobius Vermicularis": 0.7677,
+                "Fasciola Hepatica": 0.6731,
+                "Hymenolepis": 0.8296,
+                "Schistosoma": 0.7104,
+                "Taenia Sp": 0.7516,
+                "Trichuris Trichiura": 0.7582
+            }
+        }
+    ],
+    "classification_benchmarks": [
+        {
+            "model_name": "DINOv2 ViT-S/14 Transfer",
+            "paradigm": "Self-Supervised Foundation ViT (Linear Probe)",
+            "reference": "Oquab et al., 2023",
+            "params_m": 22.8,
+            "gflops": 45.3,
+            "latency_ms": 14.7,
+            "fps": 68.0,
+            "species_accuracy": 0.7256,
+            "task": "Whole-Slide / Patch Species Classification"
+        },
+        {
+            "model_name": "Visual Jev Multi-Query Head",
+            "paradigm": "Multi-Task Representation (Species + Presence + Density)",
+            "reference": "Experimental Architecture",
+            "params_m": 28.5,
+            "gflops": 8.9,
+            "latency_ms": 4.89,
+            "fps": 204.4,
+            "species_accuracy": 0.7907,
+            "presence_accuracy_on_positives": 1.0,
+            "task": "Slide-Level Multi-Task Classification"
+        }
+    ]
+}
