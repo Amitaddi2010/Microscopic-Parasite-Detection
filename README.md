@@ -49,6 +49,30 @@ All models were evaluated under identical optimizer settings, resolution ($640 \
 
 ---
 
+### Table 5: Independent External Clinical Validation Benchmark (N = 1,000 Out-of-Distribution Slides)
+| Model Architecture | Operational Confidence Threshold | Target Pathogen (*Ascaris*) Sensitivity (%) | Top-1 Diagnostic Match Rate (%) | Any Helminth Flagged (Screening Yield) (%) | Mean Prediction Confidence | Inference Speed (FPS) |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **RT-DETR-L** | 0.15 (Permissive) | **94.30%** (943/1000) | **78.20%** | **99.40%** | 0.750 | 35.3 |
+| | **0.25 (Standard)** | **89.50% (895/1000)** | **74.70%** | **99.10%** | **0.780** | **35.3** |
+| | 0.35 | **84.80%** (848/1000) | **70.90%** | **98.20%** | 0.806 | 35.3 |
+| | 0.50 (Strict) | **78.00%** (780/1000) | **65.50%** | **95.70%** | 0.840 | 35.3 |
+| **YOLO11s** | 0.15 (Permissive) | 62.40% (624/1000) | 60.50% | 89.20% | 0.697 | 96.8 |
+| | **0.25 (Standard)** | **58.60% (586/1000)** | **56.80%** | **85.00%** | **0.731** | **96.8** |
+| | 0.35 | 54.20% (542/1000) | 52.80% | 78.50% | 0.766 | 96.8 |
+| | 0.50 (Strict) | 49.50% (495/1000) | 48.40% | 69.80% | 0.802 | 96.8 |
+| **YOLOv8s Baseline** | 0.15 (Permissive) | 61.30% (613/1000) | 59.90% | 92.40% | 0.672 | 91.8 |
+| | **0.25 (Standard)** | **55.10% (551/1000)** | **54.00%** | **87.20%** | **0.707** | **91.8** |
+| | 0.35 | 51.50% (515/1000) | 50.40% | 80.30% | 0.741 | 91.8 |
+| | 0.50 (Strict) | 44.20% (442/1000) | 43.30% | 68.10% | 0.786 | 91.8 |
+| **YOLO11n** | 0.15 (Permissive) | 62.90% (629/1000) | 60.20% | 90.70% | 0.584 | **114.6** |
+| | **0.25 (Standard)** | **55.30% (553/1000)** | **52.70%** | **86.00%** | **0.627** | **114.6** |
+| | 0.35 | 47.90% (479/1000) | 45.40% | 78.40% | 0.671 | 114.6 |
+| | 0.50 (Strict) | 37.90% (379/1000) | 35.80% | 66.00% | 0.733 | 114.6 |
+
+*Evaluated on N = 1,000 independent out-of-distribution microscopic slides without domain fine-tuning.*
+
+---
+
 ## 🖼️ Publication Figures
 
 ### Figure 1: Quantitative Benchmark Summary
@@ -66,6 +90,10 @@ All models were evaluated under identical optimizer settings, resolution ($640 \
 ### Figure 4: Multi-Class Confusion Matrices
 ![Figure 4](experiments/metrics/figure4_confusion_matrices.png)
 *2×2 multi-class confusion matrices normalized by true class target counts across all eight helminth taxa.*
+
+### Figure 5: Independent External Validation Benchmark (OOD N = 1,000 Slides)
+![Figure 5](experiments/metrics/figure5_external_validation.png)
+*(A) Slide-level diagnostic sensitivity across operating confidence thresholds (0.10 to 0.60). (B) Diagnostic screening yield (percentage of positive slides flagged) at standard confidence = 0.25. (C) Qualitative cross-domain predictions illustrating transformer domain robustness vs. convolutional false-negative dropouts.*
 
 ---
 

@@ -24,3 +24,5 @@ ENV/
 # Datasets (downloadable via Roboflow / convert_dataset.py)
 Dataset/
 Dataset_YOLO/
+External vaildation/**/*.jpg
+

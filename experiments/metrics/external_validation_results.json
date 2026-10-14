@@ -1,0 +1,2451 @@
+{
+  "RT-DETR-L": {
+    "total_images": 1000,
+    "fps": 35.3,
+    "threshold_evaluations": {
+      "conf_0.15": {
+        "threshold": 0.15,
+        "images_with_ascaris": 943,
+        "ascaris_sensitivity_pct": 94.3,
+        "top1_ascaris_pct": 74.9,
+        "any_helminth_detection_pct": 99.4,
+        "mean_ascaris_confidence": 0.7501,
+        "median_ascaris_confidence": 0.8726,
+        "species_distribution": {
+          "Ancylostoma Spp": 221,
+          "Ascaris Lumbricoides": 1253,
+          "Enterobius Vermicularis": 360,
+          "Fasciola Hepatica": 309,
+          "Hymenolepis": 153,
+          "Schistosoma": 158,
+          "Taenia Sp": 374,
+          "Trichuris Trichiura": 254
+        }
+      },
+      "conf_0.25": {
+        "threshold": 0.25,
+        "images_with_ascaris": 895,
+        "ascaris_sensitivity_pct": 89.5,
+        "top1_ascaris_pct": 74.7,
+        "any_helminth_detection_pct": 99.1,
+        "mean_ascaris_confidence": 0.7797,
+        "median_ascaris_confidence": 0.8818,
+        "species_distribution": {
+          "Ancylostoma Spp": 133,
+          "Ascaris Lumbricoides": 1097,
+          "Enterobius Vermicularis": 187,
+          "Fasciola Hepatica": 191,
+          "Hymenolepis": 103,
+          "Schistosoma": 66,
+          "Taenia Sp": 226,
+          "Trichuris Trichiura": 122
+        }
+      },
+      "conf_0.35": {
+        "threshold": 0.35,
+        "images_with_ascaris": 848,
+        "ascaris_sensitivity_pct": 84.8,
+        "top1_ascaris_pct": 74.0,
+        "any_helminth_detection_pct": 98.2,
+        "mean_ascaris_confidence": 0.8059,
+        "median_ascaris_confidence": 0.8889,
+        "species_distribution": {
+          "Ancylostoma Spp": 93,
+          "Ascaris Lumbricoides": 994,
+          "Enterobius Vermicularis": 111,
+          "Fasciola Hepatica": 132,
+          "Hymenolepis": 81,
+          "Schistosoma": 37,
+          "Taenia Sp": 126,
+          "Trichuris Trichiura": 71
+        }
+      },
+      "conf_0.5": {
+        "threshold": 0.5,
+        "images_with_ascaris": 780,
+        "ascaris_sensitivity_pct": 78.0,
+        "top1_ascaris_pct": 72.5,
+        "any_helminth_detection_pct": 95.7,
+        "mean_ascaris_confidence": 0.8396,
+        "median_ascaris_confidence": 0.8958,
+        "species_distribution": {
+          "Ancylostoma Spp": 56,
+          "Ascaris Lumbricoides": 876,
+          "Enterobius Vermicularis": 69,
+          "Fasciola Hepatica": 72,
+          "Hymenolepis": 54,
+          "Schistosoma": 16,
+          "Taenia Sp": 47,
+          "Trichuris Trichiura": 36
+        }
+      }
+    },
+    "sample_predictions": [
+      {
+        "image": "Ascaris-lumbricoides_0040_jpg.rf.a774bb47577bf7e71d01e3a401f5e440.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.30899837613105774,
+            "box": [
+              0.5019916892051697,
+              0.5014418959617615,
+              0.9629735946655273,
+              0.9998618364334106
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0247_jpg.rf.430dc84493d27cc6e43316cc8b7ae093.jpg",
+        "predictions": [
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.6497184634208679,
+            "box": [
+              0.4374723434448242,
+              0.9236423373222351,
+              0.14119315147399902,
+              0.15219049155712128
+            ]
+          },
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.36594700813293457,
+            "box": [
+              0.4374723434448242,
+              0.9236423373222351,
+              0.14119315147399902,
+              0.15219049155712128
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.20336595177650452,
+            "box": [
+              0.4374723434448242,
+              0.9236423373222351,
+              0.14119315147399902,
+              0.15219049155712128
+            ]
+          },
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.17155463993549347,
+            "box": [
+              0.49871474504470825,
+              0.7788874506950378,
+              0.10268159210681915,
+              0.11748915165662766
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.14955490827560425,
+            "box": [
+              0.49871474504470825,
+              0.7788874506950378,
+              0.10268159210681915,
+              0.11748915165662766
+            ]
+          },
+          {
+            "cls": 7,
+            "class_name": "Trichuris Trichiura",
+            "conf": 0.1483713835477829,
+            "box": [
+              0.4374723434448242,
+              0.9236423373222351,
+              0.14119315147399902,
+              0.15219049155712128
+            ]
+          },
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.13996078073978424,
+            "box": [
+              0.4374723434448242,
+              0.9236423373222351,
+              0.14119315147399902,
+              0.15219049155712128
+            ]
+          },
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.1341456174850464,
+            "box": [
+              0.5033510327339172,
+              0.49902257323265076,
+              0.9973913431167603,
+              0.9984682202339172
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.11243520677089691,
+            "box": [
+              0.5033510327339172,
+              0.49902257323265076,
+              0.9973913431167603,
+              0.9984682202339172
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0280_jpg.rf.98f06e14774e54fa78b67b09bced15b9.jpg",
+        "predictions": [
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.47881263494491577,
+            "box": [
+              0.5009714961051941,
+              0.5664741396903992,
+              0.9999081492424011,
+              0.8486574292182922
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.4052809178829193,
+            "box": [
+              0.4730198085308075,
+              0.5072046518325806,
+              0.10927825421094894,
+              0.08988761901855469
+            ]
+          },
+          {
+            "cls": 7,
+            "class_name": "Trichuris Trichiura",
+            "conf": 0.35532858967781067,
+            "box": [
+              0.5009714961051941,
+              0.5664741396903992,
+              0.9999081492424011,
+              0.8486574292182922
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.26068949699401855,
+            "box": [
+              0.5009714961051941,
+              0.5664741396903992,
+              0.9999081492424011,
+              0.8486574292182922
+            ]
+          },
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.21054624021053314,
+            "box": [
+              0.4730198085308075,
+              0.5072046518325806,
+              0.10927825421094894,
+              0.08988761901855469
+            ]
+          },
+          {
+            "cls": 6,
+            "class_name": "Taenia Sp",
+            "conf": 0.1118938997387886,
+            "box": [
+              0.4730198085308075,
+              0.5072046518325806,
+              0.10927825421094894,
+              0.08988761901855469
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0356_jpg.rf.24af282e8b6737401d60972be43bbbbf.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9161766767501831,
+            "box": [
+              0.4885409474372864,
+              0.496788889169693,
+              0.10549473762512207,
+              0.19608484208583832
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0406_jpg.rf.4886c3ff6625188ba624dfab8a060c3b.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8405231237411499,
+            "box": [
+              0.7128975987434387,
+              0.46760907769203186,
+              0.1333932876586914,
+              0.14218981564044952
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0483_jpg.rf.e4c640873ac1acc557e5e2cf631fe879.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8971466422080994,
+            "box": [
+              0.49330243468284607,
+              0.522006094455719,
+              0.10734906047582626,
+              0.07821168750524521
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.11135786771774292,
+            "box": [
+              0.49330243468284607,
+              0.522006094455719,
+              0.10734906047582626,
+              0.07821168750524521
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0595_jpg.rf.f0d1306b8af4f7194cc7a5a7afeac170.jpg",
+        "predictions": [
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.9076882600784302,
+            "box": [
+              0.4978353977203369,
+              0.5483130812644958,
+              0.10703478008508682,
+              0.08725142478942871
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.24807152152061462,
+            "box": [
+              0.4978353977203369,
+              0.5483130812644958,
+              0.10703478008508682,
+              0.08725142478942871
+            ]
+          },
+          {
+            "cls": 6,
+            "class_name": "Taenia Sp",
+            "conf": 0.15838634967803955,
+            "box": [
+              0.4978353977203369,
+              0.5483130812644958,
+              0.10703478008508682,
+              0.08725142478942871
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0620_jpg.rf.1dec26a722ffa6f5d5d5a8c859233fff.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8169081211090088,
+            "box": [
+              0.24379239976406097,
+              0.4873652458190918,
+              0.28725215792655945,
+              0.2816624939441681
+            ]
+          },
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.329446017742157,
+            "box": [
+              0.5039885640144348,
+              0.4983348846435547,
+              0.9997631311416626,
+              0.9992254376411438
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.2799619734287262,
+            "box": [
+              0.5039885640144348,
+              0.4983348846435547,
+              0.9997631311416626,
+              0.9992254376411438
+            ]
+          },
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.17202840745449066,
+            "box": [
+              0.24379239976406097,
+              0.4873652458190918,
+              0.28725215792655945,
+              0.2816624939441681
+            ]
+          },
+          {
+            "cls": 6,
+            "class_name": "Taenia Sp",
+            "conf": 0.12317564338445663,
+            "box": [
+              0.24379239976406097,
+              0.4873652458190918,
+              0.28725215792655945,
+              0.2816624939441681
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.12038888782262802,
+            "box": [
+              0.24379239976406097,
+              0.4873652458190918,
+              0.28725215792655945,
+              0.2816624939441681
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0737_jpg.rf.3fc997ffef977b9d26c34e27bd33fbc4.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8543716669082642,
+            "box": [
+              0.38202276825904846,
+              0.25435277819633484,
+              0.10013563930988312,
+              0.11924058198928833
+            ]
+          },
+          {
+            "cls": 6,
+            "class_name": "Taenia Sp",
+            "conf": 0.292054682970047,
+            "box": [
+              0.38202276825904846,
+              0.25435277819633484,
+              0.10013563930988312,
+              0.11924058198928833
+            ]
+          },
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.26659849286079407,
+            "box": [
+              0.38202276825904846,
+              0.25435277819633484,
+              0.10013563930988312,
+              0.11924058198928833
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0776_jpg.rf.917a460e95fcf92d63d21f99d35cd6f2.jpg",
+        "predictions": [
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.8286899328231812,
+            "box": [
+              0.2784374952316284,
+              0.47125527262687683,
+              0.1541203111410141,
+              0.08876905590295792
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.27949258685112,
+            "box": [
+              0.2784374952316284,
+              0.47125527262687683,
+              0.1541203111410141,
+              0.08876905590295792
+            ]
+          },
+          {
+            "cls": 6,
+            "class_name": "Taenia Sp",
+            "conf": 0.20247769355773926,
+            "box": [
+              0.2784374952316284,
+              0.47125527262687683,
+              0.1541203111410141,
+              0.08876905590295792
+            ]
+          },
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.13219672441482544,
+            "box": [
+              0.2784374952316284,
+              0.47125527262687683,
+              0.1541203111410141,
+              0.08876905590295792
+            ]
+          },
+          {
+            "cls": 7,
+            "class_name": "Trichuris Trichiura",
+            "conf": 0.11880040913820267,
+            "box": [
+              0.2784374952316284,
+              0.47125527262687683,
+              0.1541203111410141,
+              0.08876905590295792
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0901_jpg.rf.dd8229d4253dd74ba6620caf963fd9aa.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.907795250415802,
+            "box": [
+              0.48599711060523987,
+              0.4172704815864563,
+              0.11328215897083282,
+              0.16681762039661407
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0982_jpg.rf.9eca88a6a8f9b0cf77b91928cd45d850.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.766206681728363,
+            "box": [
+              0.49650701880455017,
+              0.5408105254173279,
+              0.1262587606906891,
+              0.08007407188415527
+            ]
+          },
+          {
+            "cls": 6,
+            "class_name": "Taenia Sp",
+            "conf": 0.6756814122200012,
+            "box": [
+              0.49650701880455017,
+              0.5408105254173279,
+              0.1262587606906891,
+              0.08007407188415527
+            ]
+          },
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.13956674933433533,
+            "box": [
+              0.49650701880455017,
+              0.5408105254173279,
+              0.1262587606906891,
+              0.08007407188415527
+            ]
+          },
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.10581260919570923,
+            "box": [
+              0.49650701880455017,
+              0.5408105254173279,
+              0.1262587606906891,
+              0.08007407188415527
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0002_jpg.rf.e2063af48a2deade37ffb33bff9ccbab.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9481942057609558,
+            "box": [
+              0.5022293329238892,
+              0.49942612648010254,
+              0.9995487332344055,
+              0.9981650710105896
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0003_jpg.rf.82230c64770c11e84ba7e1ec832eee09.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8980402946472168,
+            "box": [
+              0.5025414824485779,
+              0.4978516101837158,
+              0.9996702075004578,
+              0.9988579750061035
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8164038062095642,
+            "box": [
+              0.47818803787231445,
+              0.49887925386428833,
+              0.21218779683113098,
+              0.24356520175933838
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0004_jpg.rf.72c9e8f72580c26139fe06feadb9e020.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9282213449478149,
+            "box": [
+              0.4318515956401825,
+              0.4693938195705414,
+              0.20457787811756134,
+              0.2897699773311615
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0005_jpg.rf.fb6a7a1fd5824c236243f9d7c759acaa.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9431475400924683,
+            "box": [
+              0.48120036721229553,
+              0.5378178954124451,
+              0.1852729767560959,
+              0.3211146891117096
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0007_jpg.rf.e4f2bc972efc1a27d0ee53aa721c9c31.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9404955506324768,
+            "box": [
+              0.431478887796402,
+              0.462722510099411,
+              0.19854135811328888,
+              0.2680681645870209
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0008_jpg.rf.4c26ccdca2271b4e00654348832b8030.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.7220603227615356,
+            "box": [
+              0.5032306909561157,
+              0.49885812401771545,
+              0.9984357953071594,
+              0.9933411478996277
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0009_jpg.rf.32042785fa4035d7fb46a552cbe0f637.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9266724586486816,
+            "box": [
+              0.4225406348705292,
+              0.2907956540584564,
+              0.17848122119903564,
+              0.4799256920814514
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0010_jpg.rf.b92b5b8025f85ea72a8861c18a4271f7.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.7652793526649475,
+            "box": [
+              0.5026432871818542,
+              0.498798131942749,
+              0.9999149441719055,
+              0.9971650242805481
+            ]
+          },
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.2207433134317398,
+            "box": [
+              0.5026432871818542,
+              0.498798131942749,
+              0.9999149441719055,
+              0.9971650242805481
+            ]
+          },
+          {
+            "cls": 7,
+            "class_name": "Trichuris Trichiura",
+            "conf": 0.13698865473270416,
+            "box": [
+              0.5026432871818542,
+              0.498798131942749,
+              0.9999149441719055,
+              0.9971650242805481
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "YOLO11s": {
+    "total_images": 1000,
+    "fps": 96.8,
+    "threshold_evaluations": {
+      "conf_0.15": {
+        "threshold": 0.15,
+        "images_with_ascaris": 622,
+        "ascaris_sensitivity_pct": 62.2,
+        "top1_ascaris_pct": 57.1,
+        "any_helminth_detection_pct": 91.5,
+        "mean_ascaris_confidence": 0.7001,
+        "median_ascaris_confidence": 0.8006,
+        "species_distribution": {
+          "Ancylostoma Spp": 305,
+          "Ascaris Lumbricoides": 653,
+          "Enterobius Vermicularis": 127,
+          "Fasciola Hepatica": 174,
+          "Hymenolepis": 31,
+          "Schistosoma": 47,
+          "Taenia Sp": 21,
+          "Trichuris Trichiura": 13
+        }
+      },
+      "conf_0.25": {
+        "threshold": 0.25,
+        "images_with_ascaris": 586,
+        "ascaris_sensitivity_pct": 58.6,
+        "top1_ascaris_pct": 55.3,
+        "any_helminth_detection_pct": 85.0,
+        "mean_ascaris_confidence": 0.731,
+        "median_ascaris_confidence": 0.82,
+        "species_distribution": {
+          "Ancylostoma Spp": 141,
+          "Ascaris Lumbricoides": 606,
+          "Enterobius Vermicularis": 95,
+          "Fasciola Hepatica": 149,
+          "Hymenolepis": 28,
+          "Schistosoma": 30,
+          "Taenia Sp": 13,
+          "Trichuris Trichiura": 9
+        }
+      },
+      "conf_0.35": {
+        "threshold": 0.35,
+        "images_with_ascaris": 542,
+        "ascaris_sensitivity_pct": 54.2,
+        "top1_ascaris_pct": 52.8,
+        "any_helminth_detection_pct": 78.5,
+        "mean_ascaris_confidence": 0.7659,
+        "median_ascaris_confidence": 0.8322,
+        "species_distribution": {
+          "Ancylostoma Spp": 75,
+          "Ascaris Lumbricoides": 555,
+          "Enterobius Vermicularis": 79,
+          "Fasciola Hepatica": 125,
+          "Hymenolepis": 25,
+          "Schistosoma": 20,
+          "Taenia Sp": 10,
+          "Trichuris Trichiura": 5
+        }
+      },
+      "conf_0.5": {
+        "threshold": 0.5,
+        "images_with_ascaris": 495,
+        "ascaris_sensitivity_pct": 49.5,
+        "top1_ascaris_pct": 49.1,
+        "any_helminth_detection_pct": 66.4,
+        "mean_ascaris_confidence": 0.7978,
+        "median_ascaris_confidence": 0.8451,
+        "species_distribution": {
+          "Ancylostoma Spp": 25,
+          "Ascaris Lumbricoides": 504,
+          "Enterobius Vermicularis": 56,
+          "Fasciola Hepatica": 78,
+          "Hymenolepis": 16,
+          "Schistosoma": 7,
+          "Taenia Sp": 4,
+          "Trichuris Trichiura": 3
+        }
+      }
+    },
+    "sample_predictions": [
+      {
+        "image": "Ascaris-lumbricoides_0040_jpg.rf.a774bb47577bf7e71d01e3a401f5e440.jpg",
+        "predictions": []
+      },
+      {
+        "image": "Ascaris-lumbricoides_0247_jpg.rf.430dc84493d27cc6e43316cc8b7ae093.jpg",
+        "predictions": []
+      },
+      {
+        "image": "Ascaris-lumbricoides_0280_jpg.rf.98f06e14774e54fa78b67b09bced15b9.jpg",
+        "predictions": [
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.22781743109226227,
+            "box": [
+              0.6984601020812988,
+              0.6543067693710327,
+              0.04403800889849663,
+              0.039218902587890625
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0356_jpg.rf.24af282e8b6737401d60972be43bbbbf.jpg",
+        "predictions": [
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.5436822772026062,
+            "box": [
+              0.48894116282463074,
+              0.49584245681762695,
+              0.1104731559753418,
+              0.18777142465114594
+            ]
+          },
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.15688572824001312,
+            "box": [
+              0.4885759949684143,
+              0.49654531478881836,
+              0.10908470302820206,
+              0.1867559403181076
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0406_jpg.rf.4886c3ff6625188ba624dfab8a060c3b.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.593571126461029,
+            "box": [
+              0.7114278078079224,
+              0.4712564945220947,
+              0.1342180222272873,
+              0.14765071868896484
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0483_jpg.rf.e4c640873ac1acc557e5e2cf631fe879.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8973011374473572,
+            "box": [
+              0.49269524216651917,
+              0.5222331881523132,
+              0.10470085591077805,
+              0.07820158451795578
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0595_jpg.rf.f0d1306b8af4f7194cc7a5a7afeac170.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8022333383560181,
+            "box": [
+              0.4981488287448883,
+              0.5477622151374817,
+              0.1045878455042839,
+              0.08739147335290909
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0620_jpg.rf.1dec26a722ffa6f5d5d5a8c859233fff.jpg",
+        "predictions": [
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.6335792541503906,
+            "box": [
+              0.8660854697227478,
+              0.7572656869888306,
+              0.07291965931653976,
+              0.06187915802001953
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.4344939589500427,
+            "box": [
+              0.24632588028907776,
+              0.4893129765987396,
+              0.28035402297973633,
+              0.2728721797466278
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.4162607789039612,
+            "box": [
+              0.34557756781578064,
+              0.09926482290029526,
+              0.09051523357629776,
+              0.07406699657440186
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.40990227460861206,
+            "box": [
+              0.5441520810127258,
+              0.038190342485904694,
+              0.0804012343287468,
+              0.07638068497180939
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.40104734897613525,
+            "box": [
+              0.8217489123344421,
+              0.351032555103302,
+              0.08789005130529404,
+              0.09377546608448029
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.37714406847953796,
+            "box": [
+              0.3785402178764343,
+              0.9828252792358398,
+              0.06528840214014053,
+              0.03434944152832031
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.23977500200271606,
+            "box": [
+              0.5261114239692688,
+              0.9735586047172546,
+              0.07684326171875,
+              0.0494869239628315
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.23010559380054474,
+            "box": [
+              0.8604861497879028,
+              0.2099042683839798,
+              0.04747429117560387,
+              0.05284938961267471
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.22635114192962646,
+            "box": [
+              0.9584161639213562,
+              0.8745213747024536,
+              0.0831676498055458,
+              0.0791311264038086
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.22495919466018677,
+            "box": [
+              0.4891373813152313,
+              0.8543995022773743,
+              0.0674285888671875,
+              0.061061859130859375
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.20982451736927032,
+            "box": [
+              0.029116541147232056,
+              0.07960271090269089,
+              0.05823308229446411,
+              0.07749965041875839
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.19662989675998688,
+            "box": [
+              0.8035411834716797,
+              0.5947958827018738,
+              0.07449417561292648,
+              0.057817649096250534
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.1927078515291214,
+            "box": [
+              0.24631133675575256,
+              0.48804494738578796,
+              0.28129664063453674,
+              0.27346429228782654
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.17066937685012817,
+            "box": [
+              0.8067119717597961,
+              0.6784073114395142,
+              0.07287540286779404,
+              0.06922683864831924
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.1483922153711319,
+            "box": [
+              0.8418253064155579,
+              0.03295189142227173,
+              0.074060820043087,
+              0.06529755890369415
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.14561089873313904,
+            "box": [
+              0.049068957567214966,
+              0.8043403625488281,
+              0.09086927026510239,
+              0.06988906860351562
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.14478859305381775,
+            "box": [
+              0.6847056150436401,
+              0.4487111270427704,
+              0.07226581871509552,
+              0.08111877739429474
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.12042860686779022,
+            "box": [
+              0.14167241752147675,
+              0.7571415901184082,
+              0.06612930446863174,
+              0.04827594757080078
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0737_jpg.rf.3fc997ffef977b9d26c34e27bd33fbc4.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8275489211082458,
+            "box": [
+              0.38146623969078064,
+              0.25422486662864685,
+              0.09782500565052032,
+              0.11674948781728745
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0776_jpg.rf.917a460e95fcf92d63d21f99d35cd6f2.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8618522882461548,
+            "box": [
+              0.2784523069858551,
+              0.4701191484928131,
+              0.15000048279762268,
+              0.0894765853881836
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0901_jpg.rf.dd8229d4253dd74ba6620caf963fd9aa.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8718751072883606,
+            "box": [
+              0.4853094518184662,
+              0.41539573669433594,
+              0.11509199440479279,
+              0.16300204396247864
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0982_jpg.rf.9eca88a6a8f9b0cf77b91928cd45d850.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8389814496040344,
+            "box": [
+              0.49662303924560547,
+              0.5407130718231201,
+              0.12013568729162216,
+              0.08226948231458664
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.10069876164197922,
+            "box": [
+              0.38029423356056213,
+              0.8124577403068542,
+              0.061534978449344635,
+              0.05492134019732475
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0002_jpg.rf.e2063af48a2deade37ffb33bff9ccbab.jpg",
+        "predictions": [
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.24045640230178833,
+            "box": [
+              0.9858113527297974,
+              0.6695957183837891,
+              0.028377342969179153,
+              0.10422229766845703
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.10939673334360123,
+            "box": [
+              0.2830072045326233,
+              0.33528411388397217,
+              0.12158670276403427,
+              0.12544846534729004
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.10830444097518921,
+            "box": [
+              0.24038568139076233,
+              0.01909344270825386,
+              0.11100836098194122,
+              0.03789880871772766
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.10689190030097961,
+            "box": [
+              0.7181940078735352,
+              0.801781952381134,
+              0.07150211185216904,
+              0.06227627024054527
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.1009255200624466,
+            "box": [
+              0.4280993938446045,
+              0.2735998332500458,
+              0.08062515407800674,
+              0.07691126316785812
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0003_jpg.rf.82230c64770c11e84ba7e1ec832eee09.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.7282453179359436,
+            "box": [
+              0.48184940218925476,
+              0.49896755814552307,
+              0.22616291046142578,
+              0.23966865241527557
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0004_jpg.rf.72c9e8f72580c26139fe06feadb9e020.jpg",
+        "predictions": [
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.3697666823863983,
+            "box": [
+              0.43050357699394226,
+              0.470355361700058,
+              0.21243155002593994,
+              0.29279062151908875
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0005_jpg.rf.fb6a7a1fd5824c236243f9d7c759acaa.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.7552061080932617,
+            "box": [
+              0.47957250475883484,
+              0.5374829173088074,
+              0.19243943691253662,
+              0.31616634130477905
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0007_jpg.rf.e4f2bc972efc1a27d0ee53aa721c9c31.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9155036807060242,
+            "box": [
+              0.43021735548973083,
+              0.46155643463134766,
+              0.19875775277614594,
+              0.2653892934322357
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0008_jpg.rf.4c26ccdca2271b4e00654348832b8030.jpg",
+        "predictions": []
+      },
+      {
+        "image": "Ascaris-lumbricoides_0009_jpg.rf.32042785fa4035d7fb46a552cbe0f637.jpg",
+        "predictions": [
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.704538106918335,
+            "box": [
+              0.42111921310424805,
+              0.2888851463794708,
+              0.1947135031223297,
+              0.4839613437652588
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0010_jpg.rf.b92b5b8025f85ea72a8861c18a4271f7.jpg",
+        "predictions": [
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.5841552019119263,
+            "box": [
+              0.6350957751274109,
+              0.506191074848175,
+              0.3231498897075653,
+              0.2714598774909973
+            ]
+          },
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.26595577597618103,
+            "box": [
+              0.6347232460975647,
+              0.5052405595779419,
+              0.32556697726249695,
+              0.271151065826416
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.2610328197479248,
+            "box": [
+              0.1844177544116974,
+              0.9532255530357361,
+              0.056580450385808945,
+              0.04609375074505806
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "YOLOv8s": {
+    "total_images": 1000,
+    "fps": 91.8,
+    "threshold_evaluations": {
+      "conf_0.15": {
+        "threshold": 0.15,
+        "images_with_ascaris": 594,
+        "ascaris_sensitivity_pct": 59.4,
+        "top1_ascaris_pct": 51.7,
+        "any_helminth_detection_pct": 91.4,
+        "mean_ascaris_confidence": 0.6701,
+        "median_ascaris_confidence": 0.7548,
+        "species_distribution": {
+          "Ancylostoma Spp": 56,
+          "Ascaris Lumbricoides": 623,
+          "Enterobius Vermicularis": 252,
+          "Fasciola Hepatica": 84,
+          "Hymenolepis": 61,
+          "Schistosoma": 64,
+          "Taenia Sp": 83,
+          "Trichuris Trichiura": 17
+        }
+      },
+      "conf_0.25": {
+        "threshold": 0.25,
+        "images_with_ascaris": 551,
+        "ascaris_sensitivity_pct": 55.1,
+        "top1_ascaris_pct": 50.4,
+        "any_helminth_detection_pct": 87.2,
+        "mean_ascaris_confidence": 0.7073,
+        "median_ascaris_confidence": 0.7837,
+        "species_distribution": {
+          "Ancylostoma Spp": 35,
+          "Ascaris Lumbricoides": 569,
+          "Enterobius Vermicularis": 207,
+          "Fasciola Hepatica": 64,
+          "Hymenolepis": 52,
+          "Schistosoma": 46,
+          "Taenia Sp": 74,
+          "Trichuris Trichiura": 13
+        }
+      },
+      "conf_0.35": {
+        "threshold": 0.35,
+        "images_with_ascaris": 513,
+        "ascaris_sensitivity_pct": 51.3,
+        "top1_ascaris_pct": 48.7,
+        "any_helminth_detection_pct": 81.5,
+        "mean_ascaris_confidence": 0.7376,
+        "median_ascaris_confidence": 0.805,
+        "species_distribution": {
+          "Ancylostoma Spp": 21,
+          "Ascaris Lumbricoides": 527,
+          "Enterobius Vermicularis": 177,
+          "Fasciola Hepatica": 53,
+          "Hymenolepis": 42,
+          "Schistosoma": 33,
+          "Taenia Sp": 59,
+          "Trichuris Trichiura": 9
+        }
+      },
+      "conf_0.5": {
+        "threshold": 0.5,
+        "images_with_ascaris": 442,
+        "ascaris_sensitivity_pct": 44.2,
+        "top1_ascaris_pct": 43.3,
+        "any_helminth_detection_pct": 68.1,
+        "mean_ascaris_confidence": 0.7865,
+        "median_ascaris_confidence": 0.8288,
+        "species_distribution": {
+          "Ancylostoma Spp": 11,
+          "Ascaris Lumbricoides": 452,
+          "Enterobius Vermicularis": 137,
+          "Fasciola Hepatica": 35,
+          "Hymenolepis": 22,
+          "Schistosoma": 17,
+          "Taenia Sp": 38,
+          "Trichuris Trichiura": 4
+        }
+      }
+    },
+    "sample_predictions": [
+      {
+        "image": "Ascaris-lumbricoides_0040_jpg.rf.a774bb47577bf7e71d01e3a401f5e440.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.23602303862571716,
+            "box": [
+              0.4719448685646057,
+              0.43662014603614807,
+              0.19795608520507812,
+              0.2696845829486847
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0247_jpg.rf.430dc84493d27cc6e43316cc8b7ae093.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.23030441999435425,
+            "box": [
+              0.4370482563972473,
+              0.9254868626594543,
+              0.13984492421150208,
+              0.1481233686208725
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0280_jpg.rf.98f06e14774e54fa78b67b09bced15b9.jpg",
+        "predictions": [
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.31672805547714233,
+            "box": [
+              0.4047825038433075,
+              0.7340618968009949,
+              0.04584932327270508,
+              0.027387237176299095
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0356_jpg.rf.24af282e8b6737401d60972be43bbbbf.jpg",
+        "predictions": [
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.8672330975532532,
+            "box": [
+              0.48760929703712463,
+              0.4959425628185272,
+              0.11189194023609161,
+              0.18962326645851135
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0406_jpg.rf.4886c3ff6625188ba624dfab8a060c3b.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.7366064190864563,
+            "box": [
+              0.7130333185195923,
+              0.4716375470161438,
+              0.134124755859375,
+              0.1463533639907837
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0483_jpg.rf.e4c640873ac1acc557e5e2cf631fe879.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8720818758010864,
+            "box": [
+              0.49325892329216003,
+              0.5225427746772766,
+              0.10384541004896164,
+              0.07865715026855469
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0595_jpg.rf.f0d1306b8af4f7194cc7a5a7afeac170.jpg",
+        "predictions": [
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.23766101896762848,
+            "box": [
+              0.4990147650241852,
+              0.5473290085792542,
+              0.1078868880867958,
+              0.08737678825855255
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.20234206318855286,
+            "box": [
+              0.4979666769504547,
+              0.5481051802635193,
+              0.10901565849781036,
+              0.08609743416309357
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0620_jpg.rf.1dec26a722ffa6f5d5d5a8c859233fff.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.7253971099853516,
+            "box": [
+              0.2471425086259842,
+              0.48874861001968384,
+              0.2829866111278534,
+              0.2727052867412567
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0737_jpg.rf.3fc997ffef977b9d26c34e27bd33fbc4.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.6465874910354614,
+            "box": [
+              0.3814089596271515,
+              0.25497761368751526,
+              0.09832406044006348,
+              0.11643334478139877
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0776_jpg.rf.917a460e95fcf92d63d21f99d35cd6f2.jpg",
+        "predictions": [
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.41375645995140076,
+            "box": [
+              0.2780624032020569,
+              0.471339613199234,
+              0.15002556145191193,
+              0.0911986380815506
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0901_jpg.rf.dd8229d4253dd74ba6620caf963fd9aa.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.5411746501922607,
+            "box": [
+              0.48602181673049927,
+              0.4148976504802704,
+              0.1145404800772667,
+              0.16194267570972443
+            ]
+          },
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.45134681463241577,
+            "box": [
+              0.4861329197883606,
+              0.4159459173679352,
+              0.11444912105798721,
+              0.1638641208410263
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0982_jpg.rf.9eca88a6a8f9b0cf77b91928cd45d850.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.22852687537670135,
+            "box": [
+              0.4964373707771301,
+              0.5416333675384521,
+              0.12021255493164062,
+              0.07918882369995117
+            ]
+          },
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.12224684655666351,
+            "box": [
+              0.495147705078125,
+              0.5413958430290222,
+              0.12098751217126846,
+              0.07896709442138672
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0002_jpg.rf.e2063af48a2deade37ffb33bff9ccbab.jpg",
+        "predictions": [
+          {
+            "cls": 6,
+            "class_name": "Taenia Sp",
+            "conf": 0.48652464151382446,
+            "box": [
+              0.2832354009151459,
+              0.3387116491794586,
+              0.1085304245352745,
+              0.11012907326221466
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0003_jpg.rf.82230c64770c11e84ba7e1ec832eee09.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.6833598017692566,
+            "box": [
+              0.48182645440101624,
+              0.49923062324523926,
+              0.22503690421581268,
+              0.23806467652320862
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0004_jpg.rf.72c9e8f72580c26139fe06feadb9e020.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9227582812309265,
+            "box": [
+              0.43211594223976135,
+              0.4679485261440277,
+              0.2135239690542221,
+              0.288504421710968
+            ]
+          },
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.1451157182455063,
+            "box": [
+              0.9038084149360657,
+              0.865536630153656,
+              0.1799953430891037,
+              0.22733592987060547
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0005_jpg.rf.fb6a7a1fd5824c236243f9d7c759acaa.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.881702721118927,
+            "box": [
+              0.48139190673828125,
+              0.5386027097702026,
+              0.1940087378025055,
+              0.3180716633796692
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0007_jpg.rf.e4f2bc972efc1a27d0ee53aa721c9c31.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8599626421928406,
+            "box": [
+              0.4323395788669586,
+              0.46150675415992737,
+              0.20245695114135742,
+              0.2664502263069153
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0008_jpg.rf.4c26ccdca2271b4e00654348832b8030.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.7485702037811279,
+            "box": [
+              0.26125282049179077,
+              0.4791626036167145,
+              0.2723940312862396,
+              0.32830944657325745
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0009_jpg.rf.32042785fa4035d7fb46a552cbe0f637.jpg",
+        "predictions": [
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.5030759572982788,
+            "box": [
+              0.42225518822669983,
+              0.2877720296382904,
+              0.1859099417924881,
+              0.4814393222332001
+            ]
+          },
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.40314924716949463,
+            "box": [
+              0.42221513390541077,
+              0.2870611846446991,
+              0.18668566644191742,
+              0.49411115050315857
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0010_jpg.rf.b92b5b8025f85ea72a8861c18a4271f7.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.5066373348236084,
+            "box": [
+              0.6350262761116028,
+              0.5060826539993286,
+              0.3176549971103668,
+              0.272391676902771
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "YOLO11n": {
+    "total_images": 1000,
+    "fps": 114.6,
+    "threshold_evaluations": {
+      "conf_0.15": {
+        "threshold": 0.15,
+        "images_with_ascaris": 640,
+        "ascaris_sensitivity_pct": 64.0,
+        "top1_ascaris_pct": 54.9,
+        "any_helminth_detection_pct": 94.7,
+        "mean_ascaris_confidence": 0.5687,
+        "median_ascaris_confidence": 0.5929,
+        "species_distribution": {
+          "Ancylostoma Spp": 49,
+          "Ascaris Lumbricoides": 674,
+          "Enterobius Vermicularis": 322,
+          "Fasciola Hepatica": 108,
+          "Hymenolepis": 163,
+          "Schistosoma": 95,
+          "Taenia Sp": 62,
+          "Trichuris Trichiura": 27
+        }
+      },
+      "conf_0.25": {
+        "threshold": 0.25,
+        "images_with_ascaris": 553,
+        "ascaris_sensitivity_pct": 55.3,
+        "top1_ascaris_pct": 51.4,
+        "any_helminth_detection_pct": 86.0,
+        "mean_ascaris_confidence": 0.6267,
+        "median_ascaris_confidence": 0.6446,
+        "species_distribution": {
+          "Ancylostoma Spp": 16,
+          "Ascaris Lumbricoides": 568,
+          "Enterobius Vermicularis": 240,
+          "Fasciola Hepatica": 49,
+          "Hymenolepis": 119,
+          "Schistosoma": 54,
+          "Taenia Sp": 36,
+          "Trichuris Trichiura": 20
+        }
+      },
+      "conf_0.35": {
+        "threshold": 0.35,
+        "images_with_ascaris": 480,
+        "ascaris_sensitivity_pct": 48.0,
+        "top1_ascaris_pct": 46.3,
+        "any_helminth_detection_pct": 74.8,
+        "mean_ascaris_confidence": 0.6751,
+        "median_ascaris_confidence": 0.6932,
+        "species_distribution": {
+          "Ancylostoma Spp": 5,
+          "Ascaris Lumbricoides": 489,
+          "Enterobius Vermicularis": 186,
+          "Fasciola Hepatica": 29,
+          "Hymenolepis": 78,
+          "Schistosoma": 25,
+          "Taenia Sp": 22,
+          "Trichuris Trichiura": 14
+        }
+      },
+      "conf_0.5": {
+        "threshold": 0.5,
+        "images_with_ascaris": 379,
+        "ascaris_sensitivity_pct": 37.9,
+        "top1_ascaris_pct": 37.5,
+        "any_helminth_detection_pct": 57.7,
+        "mean_ascaris_confidence": 0.7421,
+        "median_ascaris_confidence": 0.754,
+        "species_distribution": {
+          "Ancylostoma Spp": 1,
+          "Ascaris Lumbricoides": 385,
+          "Enterobius Vermicularis": 136,
+          "Fasciola Hepatica": 7,
+          "Hymenolepis": 42,
+          "Schistosoma": 13,
+          "Taenia Sp": 10,
+          "Trichuris Trichiura": 10
+        }
+      }
+    },
+    "sample_predictions": [
+      {
+        "image": "Ascaris-lumbricoides_0040_jpg.rf.a774bb47577bf7e71d01e3a401f5e440.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.207191601395607,
+            "box": [
+              0.4680805206298828,
+              0.46683263778686523,
+              0.1829501837491989,
+              0.2034795582294464
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0247_jpg.rf.430dc84493d27cc6e43316cc8b7ae093.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.12736520171165466,
+            "box": [
+              0.5080222487449646,
+              0.7370206713676453,
+              0.12679986655712128,
+              0.20663872361183167
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0280_jpg.rf.98f06e14774e54fa78b67b09bced15b9.jpg",
+        "predictions": [
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.17010575532913208,
+            "box": [
+              0.6730352640151978,
+              0.6525209546089172,
+              0.09749650955200195,
+              0.05281562730669975
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.14211219549179077,
+            "box": [
+              0.4727317988872528,
+              0.5057355165481567,
+              0.10529632866382599,
+              0.08796101063489914
+            ]
+          },
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.11371167749166489,
+            "box": [
+              0.4717835485935211,
+              0.5047255754470825,
+              0.10743828117847443,
+              0.08804607391357422
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0356_jpg.rf.24af282e8b6737401d60972be43bbbbf.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.4002707898616791,
+            "box": [
+              0.4886534810066223,
+              0.49609652161598206,
+              0.10973892360925674,
+              0.18788281083106995
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0406_jpg.rf.4886c3ff6625188ba624dfab8a060c3b.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.884343683719635,
+            "box": [
+              0.7115602493286133,
+              0.47041913866996765,
+              0.13571511209011078,
+              0.14576895534992218
+            ]
+          },
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.10302257537841797,
+            "box": [
+              0.06011996790766716,
+              0.412567138671875,
+              0.11998585611581802,
+              0.8174030184745789
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0483_jpg.rf.e4c640873ac1acc557e5e2cf631fe879.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.4811501204967499,
+            "box": [
+              0.49297866225242615,
+              0.5242568254470825,
+              0.10447235405445099,
+              0.07841815799474716
+            ]
+          },
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.44118237495422363,
+            "box": [
+              0.49295398592948914,
+              0.523959755897522,
+              0.10541076958179474,
+              0.0789121612906456
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0595_jpg.rf.f0d1306b8af4f7194cc7a5a7afeac170.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.5792539715766907,
+            "box": [
+              0.49853506684303284,
+              0.5486858487129211,
+              0.10347137600183487,
+              0.08472652733325958
+            ]
+          },
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.3916398286819458,
+            "box": [
+              0.48874107003211975,
+              0.1914375275373459,
+              0.9774821400642395,
+              0.38120490312576294
+            ]
+          },
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.11091411858797073,
+            "box": [
+              0.4984327256679535,
+              0.5494099855422974,
+              0.10318832844495773,
+              0.08420401066541672
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0620_jpg.rf.1dec26a722ffa6f5d5d5a8c859233fff.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.34869906306266785,
+            "box": [
+              0.24599798023700714,
+              0.4909277558326721,
+              0.28128528594970703,
+              0.279395192861557
+            ]
+          },
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.12637902796268463,
+            "box": [
+              0.8276471495628357,
+              0.347001850605011,
+              0.09754619747400284,
+              0.09611902385950089
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0737_jpg.rf.3fc997ffef977b9d26c34e27bd33fbc4.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.7407223582267761,
+            "box": [
+              0.38149577379226685,
+              0.25475800037384033,
+              0.0992242842912674,
+              0.11757908016443253
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0776_jpg.rf.917a460e95fcf92d63d21f99d35cd6f2.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.3815983533859253,
+            "box": [
+              0.2771553099155426,
+              0.47183749079704285,
+              0.1479940414428711,
+              0.08948755264282227
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.1444755345582962,
+            "box": [
+              0.2773328125476837,
+              0.47144395112991333,
+              0.14732718467712402,
+              0.08948402851819992
+            ]
+          },
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.12273663282394409,
+            "box": [
+              0.2766483724117279,
+              0.4720830023288727,
+              0.14899006485939026,
+              0.08868656307458878
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0901_jpg.rf.dd8229d4253dd74ba6620caf963fd9aa.jpg",
+        "predictions": [
+          {
+            "cls": 4,
+            "class_name": "Hymenolepis",
+            "conf": 0.37286654114723206,
+            "box": [
+              0.48554641008377075,
+              0.41727152466773987,
+              0.1148691177368164,
+              0.15550076961517334
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0982_jpg.rf.9eca88a6a8f9b0cf77b91928cd45d850.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.6118547320365906,
+            "box": [
+              0.4961674213409424,
+              0.5418158769607544,
+              0.12417888641357422,
+              0.07697220146656036
+            ]
+          },
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.13062435388565063,
+            "box": [
+              0.46699753403663635,
+              0.21059417724609375,
+              0.9339950680732727,
+              0.4049794375896454
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0002_jpg.rf.e2063af48a2deade37ffb33bff9ccbab.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.43909648060798645,
+            "box": [
+              0.28149494528770447,
+              0.3373296856880188,
+              0.11326055973768234,
+              0.11858387291431427
+            ]
+          },
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.31108757853507996,
+            "box": [
+              0.6701261401176453,
+              0.45064041018486023,
+              0.25504857301712036,
+              0.21053431928157806
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.21240492165088654,
+            "box": [
+              0.2427174299955368,
+              0.021526997908949852,
+              0.1641271561384201,
+              0.042816162109375
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.1632920205593109,
+            "box": [
+              0.6708997488021851,
+              0.45127078890800476,
+              0.254185289144516,
+              0.21059294044971466
+            ]
+          },
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.11521674692630768,
+            "box": [
+              0.6818651556968689,
+              0.2553063929080963,
+              0.23171310126781464,
+              0.17354507744312286
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0003_jpg.rf.82230c64770c11e84ba7e1ec832eee09.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8567277789115906,
+            "box": [
+              0.48309168219566345,
+              0.5007785558700562,
+              0.22880582511425018,
+              0.23817510902881622
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0004_jpg.rf.72c9e8f72580c26139fe06feadb9e020.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9167977571487427,
+            "box": [
+              0.432786226272583,
+              0.46783170104026794,
+              0.21259231865406036,
+              0.2880151569843292
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0005_jpg.rf.fb6a7a1fd5824c236243f9d7c759acaa.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.9077725410461426,
+            "box": [
+              0.4816756844520569,
+              0.538182258605957,
+              0.19476890563964844,
+              0.31831228733062744
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0007_jpg.rf.e4f2bc972efc1a27d0ee53aa721c9c31.jpg",
+        "predictions": [
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.8700437545776367,
+            "box": [
+              0.43142595887184143,
+              0.4628986418247223,
+              0.20121727883815765,
+              0.2708307206630707
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0008_jpg.rf.4c26ccdca2271b4e00654348832b8030.jpg",
+        "predictions": [
+          {
+            "cls": 3,
+            "class_name": "Fasciola Hepatica",
+            "conf": 0.21588833630084991,
+            "box": [
+              0.1116354689002037,
+              0.1848558485507965,
+              0.22310614585876465,
+              0.36623451113700867
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0009_jpg.rf.32042785fa4035d7fb46a552cbe0f637.jpg",
+        "predictions": [
+          {
+            "cls": 2,
+            "class_name": "Enterobius Vermicularis",
+            "conf": 0.8678770661354065,
+            "box": [
+              0.4228537082672119,
+              0.28587374091148376,
+              0.2007254660129547,
+              0.4888906478881836
+            ]
+          }
+        ]
+      },
+      {
+        "image": "Ascaris-lumbricoides_0010_jpg.rf.b92b5b8025f85ea72a8861c18a4271f7.jpg",
+        "predictions": [
+          {
+            "cls": 5,
+            "class_name": "Schistosoma",
+            "conf": 0.5563132762908936,
+            "box": [
+              0.6326568126678467,
+              0.5063973069190979,
+              0.3260056674480438,
+              0.27190467715263367
+            ]
+          },
+          {
+            "cls": 1,
+            "class_name": "Ascaris Lumbricoides",
+            "conf": 0.14970362186431885,
+            "box": [
+              0.6339184045791626,
+              0.5057844519615173,
+              0.3251149356365204,
+              0.27332744002342224
+            ]
+          },
+          {
+            "cls": 0,
+            "class_name": "Ancylostoma Spp",
+            "conf": 0.13394440710544586,
+            "box": [
+              0.6235806345939636,
+              0.029628414660692215,
+              0.1153474822640419,
+              0.05925682932138443
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
