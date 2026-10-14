@@ -38,38 +38,27 @@ All models were evaluated under identical optimizer settings, resolution ($640 \
 
 ---
 
-### Table 4: Multi-Paradigm Architectural Comparison Scoreboard
-| Rank | Model Architecture | Paradigm | mAP@0.5 (%) | Precision (%) | Recall (%) | Throughput (FPS) | Parameters (M) | Optimal Deployment Target |
-|:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|:---|
-| 🥇 | **D-FINE / RT-DETR-L** | Fine-Grained Distribution Refinement / DETR | **91.80%** | **89.93%** | **85.73%** | 40.0 | 32.9M | Highest Diagnostic Accuracy & Central Lab Workstations |
-| 🥈 | **Mamba-YOLO** | Selective SSM ($\mathcal{O}(N)$ Context) / Modern CNN | 88.33% | 85.31% | 79.17% | 93.9 | 9.4M | High-Throughput Smear Scanning & Dense Clutter |
-| 🥉 | **YAC-Net** | Asymptotic Pyramid (AFPN) + MLCA / Ultra-Compact CNN | 86.82% | 86.86% | 81.28% | 91.8 | 2.6M | Edge Microscope Deployment (Raspberry Pi / Jetson) |
-| ⚡ | **Visual Jev** | Shared Context Diagnostic VLM / Rapid Image Triage | 73.53% | 75.12% | 72.74% | **204.4** | 28.5M | Sub-5ms Rapid Preliminary Slide Triage |
-| 🌐 | **DINOv2 ViT Transfer** | Self-Supervised Cytology Transfer (DINOv2) | 66.75% | 68.20% | 65.30% | 68.0 | 22.8M | Cross-Stain Generalization Benchmark |
+### Table 4: Independent External Generalizability Stress Test ($N = 1,000$ Slides)
+| Model Architecture | Operational Confidence Threshold | Target Pathogen (*Ascaris*) Sensitivity (%) | Top-1 Diagnostic Match Rate (%) | Any Helminth Flagged (Screening Yield) (%) | Mean Prediction Confidence |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| **RT-DETR-L** | 0.15 | **94.30%** (943/1000) | **74.90%** | **99.40%** | 0.7501 |
+| | **0.25 (Standard)** | **89.50% (895/1000)** | **74.70%** | **99.10%** | **0.7797** |
+| | 0.35 | **84.80%** (848/1000) | **74.00%** | **98.20%** | **0.8059** |
+| | 0.50 (Strict) | **78.00%** (780/1000) | **72.50%** | **95.70%** | **0.8396** |
+| **YOLO11s** | 0.15 | 62.20% (622/1000) | 57.10% | 91.50% | 0.7001 |
+| | **0.25 (Standard)** | **58.60% (586/1000)** | **55.30%** | **85.00%** | **0.7310** |
+| | 0.35 | 54.20% (542/1000) | 52.80% | 78.50% | 0.7659 |
+| | 0.50 (Strict) | 49.50% (495/1000) | 49.10% | 66.40% | 0.7978 |
+| **YOLOv8s Baseline** | 0.15 | 59.40% (594/1000) | 51.70% | 91.40% | 0.6701 |
+| | **0.25 (Standard)** | **55.10% (551/1000)** | **50.40%** | **87.20%** | **0.7073** |
+| | 0.35 | 51.30% (513/1000) | 48.70% | 81.50% | 0.7376 |
+| | 0.50 (Strict) | 44.20% (442/1000) | 43.30% | 68.10% | 0.7865 |
+| **YOLO11n** | 0.15 | 64.00% (640/1000) | 54.90% | 94.70% | 0.5687 |
+| | **0.25 (Standard)** | **55.30% (553/1000)** | **51.40%** | **86.00%** | **0.6267** |
+| | 0.35 | 48.00% (480/1000) | 46.30% | 74.80% | 0.6751 |
+| | 0.50 (Strict) | 37.90% (379/1000) | 37.50% | 57.70% | 0.7421 |
 
----
-
-### Table 5: Independent External Clinical Validation Benchmark (N = 1,000 Out-of-Distribution Slides)
-| Model Architecture | Operational Confidence Threshold | Target Pathogen (*Ascaris*) Sensitivity (%) | Top-1 Diagnostic Match Rate (%) | Any Helminth Flagged (Screening Yield) (%) | Mean Prediction Confidence | Inference Speed (FPS) |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **RT-DETR-L** | 0.15 (Permissive) | **94.30%** (943/1000) | **78.20%** | **99.40%** | 0.750 | 35.3 |
-| | **0.25 (Standard)** | **89.50% (895/1000)** | **74.70%** | **99.10%** | **0.780** | **35.3** |
-| | 0.35 | **84.80%** (848/1000) | **70.90%** | **98.20%** | 0.806 | 35.3 |
-| | 0.50 (Strict) | **78.00%** (780/1000) | **65.50%** | **95.70%** | 0.840 | 35.3 |
-| **YOLO11s** | 0.15 (Permissive) | 62.40% (624/1000) | 60.50% | 89.20% | 0.697 | 96.8 |
-| | **0.25 (Standard)** | **58.60% (586/1000)** | **56.80%** | **85.00%** | **0.731** | **96.8** |
-| | 0.35 | 54.20% (542/1000) | 52.80% | 78.50% | 0.766 | 96.8 |
-| | 0.50 (Strict) | 49.50% (495/1000) | 48.40% | 69.80% | 0.802 | 96.8 |
-| **YOLOv8s Baseline** | 0.15 (Permissive) | 61.30% (613/1000) | 59.90% | 92.40% | 0.672 | 91.8 |
-| | **0.25 (Standard)** | **55.10% (551/1000)** | **54.00%** | **87.20%** | **0.707** | **91.8** |
-| | 0.35 | 51.50% (515/1000) | 50.40% | 80.30% | 0.741 | 91.8 |
-| | 0.50 (Strict) | 44.20% (442/1000) | 43.30% | 68.10% | 0.786 | 91.8 |
-| **YOLO11n** | 0.15 (Permissive) | 62.90% (629/1000) | 60.20% | 90.70% | 0.584 | **114.6** |
-| | **0.25 (Standard)** | **55.30% (553/1000)** | **52.70%** | **86.00%** | **0.627** | **114.6** |
-| | 0.35 | 47.90% (479/1000) | 45.40% | 78.40% | 0.671 | 114.6 |
-| | 0.50 (Strict) | 37.90% (379/1000) | 35.80% | 66.00% | 0.733 | 114.6 |
-
-*Evaluated on N = 1,000 independent out-of-distribution microscopic slides without domain fine-tuning.*
+*Zero-shot evaluation on N = 1,000 independent out-of-distribution microscopic slides of confirmed Ascaris lumbricoides infection without domain fine-tuning.*
 
 ---
 

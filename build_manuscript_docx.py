@@ -660,37 +660,36 @@ def create_manuscript_docx():
         "hookworm ova have thin, optically transparent shells and faint internal blastomeres that frequently merge with slide illumination gradients and fecal debris textures.\n"
         "3. Low Inter-Species Cross-Reactivity: Pairwise cross-species confusion between distinct parasitic taxa remains low (<5.0% across almost all off-diagonal cells), "
         "indicating that once an ovum boundary is successfully localized, deep feature representations reliably distinguish helminth species without confusing nematodes, trematodes, and cestodes.\n"
-        "4. Controlled Background Proposals: Across all four detectors, purely spurious background detections (bottom row) remain under 3.5%, confirming that standard "
-        "operational confidence thresholds effectively suppress non-ovum debris artifacts."
+        "4. Controlled False Proposals: Standard operational confidence thresholds effectively suppress non-ovum debris artifacts across all models."
     )
 
-    # Section 3.5 Multi-Paradigm Architectural Comparison
-    add_section_h2("3.5 Exploratory Multi-Paradigm Comparison: Detection, Rapid Triage, and Foundation Models")
-    p_t4_intro = doc.add_paragraph()
-    p_t4_intro.paragraph_format.space_after = Pt(6)
-    p_t4_intro.paragraph_format.line_spacing = 1.15
-    p_t4_intro.add_run(
-        "To contextualize the standardized object detection benchmark within broader machine learning paradigms explored during early pipeline development, "
-        "Table 4 synthesizes the overarching multi-paradigm comparative scoreboard. This evaluation spans five distinct modeling philosophies: "
-        "(i) fine-grained distribution-refined detection transformers, (ii) selective state-space convolutional architectures, (iii) asymptotic pyramidal edge detectors, "
-        "(iv) rapid slide triage vision-language classifiers, and (v) self-supervised foundation model transfer."
+    # Section 3.5 Out-of-Distribution Diagnostic Stress Test
+    add_section_h2("3.5 Out-of-Distribution Diagnostic Stress Test on Independent External Microscopy Slides (N = 1,000 Slides)")
+    p_ext_intro = doc.add_paragraph()
+    p_ext_intro.paragraph_format.space_after = Pt(6)
+    p_ext_intro.paragraph_format.line_spacing = 1.15
+    p_ext_intro.add_run(
+        "A critical limitation of current computer vision models in coprological microscopy is domain vulnerability: detectors trained on images from "
+        "a single laboratory or camera setup often experience performance degradation when applied to slides prepared under differing clinical protocols "
+        "or optical magnifications. To quantify real-world generalizability, Table 4 and Figure 5 report the evaluation of all four trained object detectors "
+        "on the independent external validation cohort (N = 1,000 brightfield microscopy slides of confirmed Ascaris lumbricoides infection)."
     )
 
-    # TABLE 4
+    # TABLE 4 (External Validation)
     p_t4_cap = doc.add_paragraph()
     p_t4_cap.paragraph_format.space_before = Pt(6)
     p_t4_cap.paragraph_format.space_after = Pt(3)
     p_t4_cap.paragraph_format.keep_with_next = True
-    r = p_t4_cap.add_run("Table 4. Multi-Paradigm Architectural Comparison Across Detection, Rapid Triage, and Foundation Models.")
+    r = p_t4_cap.add_run("Table 4. Slide-Level Out-of-Distribution Diagnostic Screening Yield on Independent External Microscopic Slides (N = 1,000 Slides of Confirmed Ascaris lumbricoides Infection).")
     r.font.bold = True
     r.font.size = Pt(9.5)
 
-    table4 = doc.add_table(rows=6, cols=9)
+    table4 = doc.add_table(rows=17, cols=6)
     table4.alignment = WD_TABLE_ALIGNMENT.CENTER
     table4.autofit = False
 
-    t4_headers = ["Rank", "Model Architecture", "Paradigm", "mAP@0.5 (%)", "Precision (%)", "Recall (%)", "FPS", "Params (M)", "Optimal Deployment Target"]
-    t4_widths = [Inches(0.4), Inches(1.3), Inches(1.8), Inches(0.7), Inches(0.65), Inches(0.65), Inches(0.55), Inches(0.65), Inches(1.5)]
+    t4_headers = ["Model Architecture", "Operational Threshold", "Ascaris Sensitivity (%)", "Top-1 Match (%)", "Any Helminth Flagged (%)", "Mean Conf."]
+    t4_widths = [Inches(1.8), Inches(1.3), Inches(1.5), Inches(1.1), Inches(1.4), Inches(0.9)]
 
     for j, h in enumerate(t4_headers):
         cell = table4.cell(0, j)
@@ -703,11 +702,22 @@ def create_manuscript_docx():
                 r.font.color.rgb = RGBColor(255, 255, 255)
 
     t4_data = [
-        ["🥇", "D-FINE / RT-DETR-L", "Fine-Grained Distribution Refinement (ICLR 2025)", "91.80%", "89.93%", "85.73%", "40.0", "32.9M", "Highest Accuracy & Reference Workstations"],
-        ["🥈", "Mamba-YOLO", "Selective SSM (O(N) Context) (AAAI 2025)", "88.33%", "85.31%", "79.17%", "93.9", "9.4M", "High-Throughput Smear Scanning & Clutter"],
-        ["🥉", "YAC-Net", "Asymptotic Pyramid (AFPN) + MLCA (2024–2026)", "86.82%", "86.86%", "81.28%", "91.8", "2.6M", "Edge Microscope Deployment (Raspberry Pi/Jetson)"],
-        ["⚡", "Visual Jev", "Shared Context Diagnostic VLM / Rapid Triage", "73.53%", "75.12%", "72.74%", "204.4", "28.5M", "Sub-5ms Rapid Preliminary Slide Triage"],
-        ["🌐", "DINOv2 ViT Transfer", "Self-Supervised Cytology Transfer (DINOv2)", "66.75%", "68.20%", "65.30%", "68.0", "22.8M", "Cross-Stain Generalization Benchmark"]
+        ["RT-DETR-L", "0.15", "94.30% (943/1000)", "74.90%", "99.40%", "0.7501"],
+        ["RT-DETR-L", "0.25 (Standard)", "89.50% (895/1000)", "74.70%", "99.10%", "0.7797"],
+        ["RT-DETR-L", "0.35", "84.80% (848/1000)", "74.00%", "98.20%", "0.8059"],
+        ["RT-DETR-L", "0.50 (Strict)", "78.00% (780/1000)", "72.50%", "95.70%", "0.8396"],
+        ["YOLO11s", "0.15", "62.20% (622/1000)", "57.10%", "91.50%", "0.7001"],
+        ["YOLO11s", "0.25 (Standard)", "58.60% (586/1000)", "55.30%", "85.00%", "0.7310"],
+        ["YOLO11s", "0.35", "54.20% (542/1000)", "52.80%", "78.50%", "0.7659"],
+        ["YOLO11s", "0.50 (Strict)", "49.50% (495/1000)", "49.10%", "66.40%", "0.7978"],
+        ["YOLOv8s Baseline", "0.15", "59.40% (594/1000)", "51.70%", "91.40%", "0.6701"],
+        ["YOLOv8s Baseline", "0.25 (Standard)", "55.10% (551/1000)", "50.40%", "87.20%", "0.7073"],
+        ["YOLOv8s Baseline", "0.35", "51.30% (513/1000)", "48.70%", "81.50%", "0.7376"],
+        ["YOLOv8s Baseline", "0.50 (Strict)", "44.20% (442/1000)", "43.30%", "68.10%", "0.7865"],
+        ["YOLO11n", "0.15", "64.00% (640/1000)", "54.90%", "94.70%", "0.5687"],
+        ["YOLO11n", "0.25 (Standard)", "55.30% (553/1000)", "51.40%", "86.00%", "0.6267"],
+        ["YOLO11n", "0.35", "48.00% (480/1000)", "46.30%", "74.80%", "0.6751"],
+        ["YOLO11n", "0.50 (Strict)", "37.90% (379/1000)", "37.50%", "57.70%", "0.7421"]
     ]
 
     for i, row_data in enumerate(t4_data):
@@ -716,85 +726,6 @@ def create_manuscript_docx():
             cell = row.cells[j]
             cell.text = val
             cell.width = t4_widths[j]
-        bg = "EBF3FA" if i == 0 else ("F7FAFC" if i % 2 == 1 else "FFFFFF")
-        format_row(row, bg_hex=bg, bold=(i==0), font_size=7.5, align=WD_ALIGN_PARAGRAPH.CENTER)
-
-    p_t4_notes = doc.add_paragraph()
-    p_t4_notes.paragraph_format.space_before = Pt(4)
-    p_t4_notes.paragraph_format.space_after = Pt(8)
-    p_t4_notes.paragraph_format.line_spacing = 1.15
-    p_t4_notes.add_run(
-        "Methodological Notes on Multi-Paradigm Scoring:\n"
-        "1. Task Scope Disparities: Full object detection models (Ranks 1–3) perform dense spatial bounding box localization with bipartite matching or "
-        "non-maximum suppression across all eight parasitic taxa. In contrast, rapid triage architectures (Rank 4, Visual Jev) operate as fast whole-slide screening "
-        "filters designed to achieve sub-5ms latency (>200 FPS) to discard empty slides before downstream detector invocation.\n"
-        "2. Foundation Model Transfer Bounds: The frozen DINOv2 ViT backbone (Rank 5) demonstrates moderate out-of-the-box transferability (66.75%), "
-        "highlighting that general-domain natural image self-supervision requires domain-specific coprological fine-tuning to resolve subtle translucent helminth ova boundaries against fecal debris."
-    )
-
-    # Section 3.6 Independent External Clinical Validation
-    add_section_h2("3.6 Independent External Clinical Validation on Out-of-Distribution Cohort (N = 1,000 Slides)")
-    p_ext_intro = doc.add_paragraph()
-    p_ext_intro.paragraph_format.space_after = Pt(6)
-    p_ext_intro.paragraph_format.line_spacing = 1.15
-    p_ext_intro.add_run(
-        "A critical limitation of current computer vision models in coprological microscopy is domain vulnerability: detectors trained on images from "
-        "a single laboratory or camera setup often experience severe performance degradation when applied to slides prepared under differing clinical protocols "
-        "or optical magnifications. To quantify real-world generalizability, Table 5 and Figure 5 report the evaluation of all four trained object detectors "
-        "on the independent external validation cohort (N = 1,000 brightfield microscopy slides)."
-    )
-
-    # TABLE 5
-    p_t5_cap = doc.add_paragraph()
-    p_t5_cap.paragraph_format.space_before = Pt(6)
-    p_t5_cap.paragraph_format.space_after = Pt(3)
-    p_t5_cap.paragraph_format.keep_with_next = True
-    r = p_t5_cap.add_run("Table 5. Independent External Validation Performance Across 1,000 Out-of-Distribution Microscopic Stool Smears.")
-    r.font.bold = True
-    r.font.size = Pt(9.5)
-
-    table5 = doc.add_table(rows=17, cols=7)
-    table5.alignment = WD_TABLE_ALIGNMENT.CENTER
-    table5.autofit = False
-
-    t5_headers = ["Model", "Operational Threshold", "Ascaris Sensitivity (%)", "Top-1 Match (%)", "Any Helminth Flagged (%)", "Mean Conf.", "Throughput (FPS)"]
-    t5_widths = [Inches(1.5), Inches(1.2), Inches(1.4), Inches(1.0), Inches(1.3), Inches(0.8), Inches(0.8)]
-
-    for j, h in enumerate(t5_headers):
-        cell = table5.cell(0, j)
-        cell.text = h
-        cell.width = t5_widths[j]
-    format_row(table5.rows[0], bg_hex="1A365D", bold=True, font_size=7.5, align=WD_ALIGN_PARAGRAPH.CENTER)
-    for c in table5.rows[0].cells:
-        for p in c.paragraphs:
-            for r in p.runs:
-                r.font.color.rgb = RGBColor(255, 255, 255)
-
-    t5_data = [
-        ["RT-DETR-L", "0.15", "94.30% (943/1000)", "74.90%", "99.40%", "0.750", "35.3"],
-        ["RT-DETR-L", "0.25 (Standard)", "89.50% (895/1000)", "74.70%", "99.10%", "0.780", "35.3"],
-        ["RT-DETR-L", "0.35", "84.80% (848/1000)", "74.00%", "98.20%", "0.806", "35.3"],
-        ["RT-DETR-L", "0.50 (Strict)", "78.00% (780/1000)", "72.50%", "95.70%", "0.840", "35.3"],
-        ["YOLO11s", "0.15", "62.20% (622/1000)", "57.10%", "91.50%", "0.700", "96.8"],
-        ["YOLO11s", "0.25 (Standard)", "58.60% (586/1000)", "55.30%", "85.00%", "0.731", "96.8"],
-        ["YOLO11s", "0.35", "54.20% (542/1000)", "52.80%", "78.50%", "0.766", "96.8"],
-        ["YOLO11s", "0.50 (Strict)", "49.50% (495/1000)", "49.10%", "66.40%", "0.798", "96.8"],
-        ["YOLOv8s Baseline", "0.15", "59.40% (594/1000)", "51.70%", "91.40%", "0.670", "91.8"],
-        ["YOLOv8s Baseline", "0.25 (Standard)", "55.10% (551/1000)", "50.40%", "87.20%", "0.707", "91.8"],
-        ["YOLOv8s Baseline", "0.35", "51.30% (513/1000)", "48.70%", "81.50%", "0.738", "91.8"],
-        ["YOLOv8s Baseline", "0.50 (Strict)", "44.20% (442/1000)", "43.30%", "68.10%", "0.786", "91.8"],
-        ["YOLO11n", "0.15", "64.00% (640/1000)", "54.90%", "94.70%", "0.569", "114.6"],
-        ["YOLO11n", "0.25 (Standard)", "55.30% (553/1000)", "51.40%", "86.00%", "0.627", "114.6"],
-        ["YOLO11n", "0.35", "48.00% (480/1000)", "46.30%", "74.80%", "0.675", "114.6"],
-        ["YOLO11n", "0.50 (Strict)", "37.90% (379/1000)", "37.50%", "57.70%", "0.742", "114.6"]
-    ]
-
-    for i, row_data in enumerate(t5_data):
-        row = table5.rows[i+1]
-        for j, val in enumerate(row_data):
-            cell = row.cells[j]
-            cell.text = val
-            cell.width = t5_widths[j]
         is_rtdetr = (i < 4)
         bg = "EBF3FA" if is_rtdetr else ("F7FAFC" if i % 2 == 1 else "FFFFFF")
         format_row(row, bg_hex=bg, bold=(i==1), font_size=7.5, align=WD_ALIGN_PARAGRAPH.CENTER)
@@ -878,21 +809,21 @@ def create_manuscript_docx():
         "trade-offs rather than missed detections."
     )
 
-    add_section_h2("4.3 Cross-Center Generalizability: Transformer Invariance vs. Convolutional Domain Collapse")
+    add_section_h2("4.3 Cross-Center Diagnostic Robustness & Representation Differences")
     p9_ext = doc.add_paragraph()
     p9_ext.paragraph_format.space_after = Pt(6)
     p9_ext.paragraph_format.line_spacing = 1.15
     p9_ext.add_run(
-        "Perhaps the most clinically significant finding of this study emerges from the independent external validation on 1,000 out-of-distribution microscopic slides (Section 3.6). "
-        "In standard in-distribution benchmarking, architectural differences between modern object detectors frequently appear modest (+4.06 pp between RT-DETR-L and YOLOv8s). "
-        "However, when deployed to an independent external laboratory source without retraining, convolutional models experienced severe performance degradation, dropping from "
-        "~88% in-distribution mAP to 55%-58% sensitivity. In contrast, RT-DETR-L demonstrated remarkable robustness, maintaining 89.50% slide-level sensitivity and a 99.10% screening yield.\n\n"
-        "This performance divergence underscores a fundamental difference in representation learning. Convolutional neural networks rely on inductive biases of translation equivariance "
-        "and local spatial hierarchies; consequently, their feature extractors are prone to overfitting to high-frequency background textures, camera sensor color casts, and illumination "
-        "gradients specific to the training set. When evaluated on external slides with differing auto-contrast equalizations or lighting conditions, these local filters fail to trigger. "
-        "In contrast, the transformer encoder's self-attention mechanism operates globally, allowing RT-DETR-L to prioritize long-range structural contours and morphological symmetries "
-        "that define helminth ova across disparate slide preparations. For global health deployments where algorithms must function reliably across diverse field clinics without "
-        "per-clinic fine-tuning, detection transformers offer decisive operational advantages."
+        "The independent evaluation on 1,000 out-of-distribution microscopic slides (Section 3.5) provides preliminary insight into model behavior under optical and "
+        "preparation shifts without local fine-tuning. When applied to an independent external laboratory source, convolutional models flagged Ascaris on 55.10%–58.60% "
+        "of positive slides at tau = 0.25, whereas RT-DETR-L maintained an 89.50% slide sensitivity and 99.10% screening yield.\n\n"
+        "Crucially, because RT-DETR-L incorporates an HGNetv2 convolutional backbone, this difference cannot be attributed to a simplistic 'transformer vs. convolution' dichotomy. "
+        "Rather, several architectural and optimization distinctions likely contribute: (1) global deformable cross-attention in the hybrid encoder (AIFI/CCFM) and 6-layer "
+        "transformer decoder models contextual dependencies across the visual field, which may prioritize invariant structural contours over local high-frequency background textures; "
+        "(2) direct bipartite set prediction optimizes global prediction assignments without anchor heuristics or non-maximum suppression parameter tuning, potentially stabilizing "
+        "candidate confidence ranking under shifted background distributions; and (3) it must be emphasized that because the external cohort comprises positive slides of a single species "
+        "(Ascaris) without spatial localization bounding boxes or uninfected controls, this test represents a slide-level candidate detection stress test rather than a full diagnostic validation. "
+        "Further multi-center prospective studies evaluating all eight taxa alongside uninfected control slides are necessary to assess true clinical generalization across diverse health centers."
     )
 
     # 5. Limitations
@@ -902,12 +833,12 @@ def create_manuscript_docx():
     p10.paragraph_format.line_spacing = 1.15
     p10.add_run(
         "To ensure scientific transparency, we explicitly delineate key limitations of this study:\n"
-        "1. Absence of Negative (Uninfected) Control Smears: The Roboflow Parasites v2 dataset consists entirely of images containing parasitic ova. "
+        "1. Absence of Negative (Uninfected) Control Smears: The Roboflow Parasites v2 dataset and the external validation dataset consist entirely of images containing parasitic ova. "
         "Without uninfected control slides from healthy individuals or slides with purely non-parasitic artifacts, slide-level clinical screening specificity, "
         "negative predictive value, and false positive rates cannot be determined.\n"
-        "2. External Validation Pathogen Scope: While the 1,000-image external validation cohort established robust cross-center generalizability for Ascaris lumbricoides, "
-        "independent out-of-distribution datasets covering the remaining seven parasitic taxa remain limited in public coprological archives. Expanding multi-center "
-        "external validation across all eight taxa remains an essential priority for future multi-center clinical trials.\n"
+        "2. External Validation Scope: The 1,000-image external validation cohort evaluates out-of-distribution candidate detection for a single species (Ascaris lumbricoides) "
+        "and lacks ground-truth spatial bounding box annotations. Expanding multi-center external validation across all eight taxa with full spatial annotations and negative controls "
+        "remains an essential priority for future research.\n"
         "3. Desktop GPU Benchmarking vs. Embedded Edge Hardware: Latency measurements were conducted on a desktop GPU (NVIDIA GeForce RTX 5060 Ti). "
         "Although parameter counts and FLOPs provide theoretical guidance, real-world inference latencies on embedded edge hardware (such as Raspberry Pi, "
         "Jetson Nano, or mobile NPUs) will be subject to thermal throttling, memory bandwidth constraints, and integer quantization effects.\n"
@@ -928,13 +859,15 @@ def create_manuscript_docx():
         "in fecal smears. By evaluating Detection Transformers (RT-DETR-L), modern compact CNNs (YOLO11s, YOLO11n), and an established standard baseline (YOLOv8s), "
         "we observed that:\n"
         "* RT-DETR-L achieved the highest overall detection accuracy (91.80% mAP@0.5, 77.32% mAP@0.5:0.95), with paired bootstrap analysis showing that its "
-        "95% CI excludes zero relative to convolutional baselines (+4.06 pp vs. YOLOv8s, +3.47 pp vs. YOLO11s). However, geometric analysis found no evidence "
-        "of an NMS effect (0.00% GT pairs >= 0.5 IoU), and interaction testing showed no statistically significant crowding interaction "
-        "(Delta_interaction = +4.03 pp, 95% CI: [-2.23, +9.55] pp, p = 0.1230);\n"
+        "95% CI excludes zero relative to convolutional baselines (+4.06 pp vs. YOLOv8s, two-sided p = 0.0028; +3.47 pp vs. YOLO11s, two-sided p = 0.0072). "
+        "However, geometric analysis found no evidence of an NMS effect (0.00% GT pairs >= 0.5 IoU), and interaction testing showed no statistically significant crowding interaction "
+        "(Delta_interaction = +4.03 pp, 95% CI: [-2.23, +9.55] pp, two-sided p = 0.2460);\n"
         "* YOLO11s performs at functional parity with the established YOLOv8s baseline, showing no statistically significant accuracy gain;\n"
         "* YOLO11n provides a compact parameter and FLOP footprint for resource-constrained deployments (86.82% mAP@0.5, 2.58M parameters, 6.4 GFLOPs), "
-        "while maintaining 80.88% recall on hookworm ova.\n\n"
-        "Future research should focus on prospective multi-center cohorts containing uninfected control slides, quantitative egg-per-gram counting, "
+        "while maintaining 80.88% recall on hookworm ova;\n"
+        "* In an out-of-distribution stress test across 1,000 independent external microscopic slides with confirmed Ascaris lumbricoides infection, "
+        "RT-DETR-L maintained 89.50% slide sensitivity (99.10% screening yield), compared to 55.10%–58.60% for convolutional models.\n\n"
+        "Future research should focus on prospective multi-center cohorts containing uninfected control slides across all eight taxa, quantitative egg-per-gram counting, "
         "and INT8 on-device profiling on embedded microcontrollers for field deployment."
     )
 
@@ -946,9 +879,9 @@ def create_manuscript_docx():
     p_dec.add_run(
         "* Funding: This research received no external funding.\n"
         "* Competing Interests: The authors declare that they have no competing financial or non-financial interests.\n"
-        "* Data Availability: The Roboflow Parasites v2 dataset is publicly accessible via Roboflow Universe [14] under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.\n"
+        "* Data Availability: The Roboflow Parasites v2 dataset is publicly accessible via Roboflow Universe [14] under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. The external validation dataset is accessible via Roboflow Universe under the CC BY 4.0 license.\n"
         "* Code Availability: Model configuration files, training scripts, and evaluation pipelines will be made publicly accessible on GitHub upon publication; during peer review, anonymized source code and checkpoints are available from the corresponding author upon reasonable request.\n"
-        "* Ethics Statement: This study utilized an existing, publicly available, fully anonymized image dataset. No human biological samples were directly collected, and no identifiable patient information was accessed."
+        "* Ethics Statement: This study utilized existing, publicly available, fully anonymized image datasets. No human biological samples were directly collected, and no identifiable patient information was accessed."
     )
 
     # References
@@ -964,8 +897,8 @@ def create_manuscript_docx():
         "[8] O. Holmström, N. Linder, B. Ngasala, et al., 'Point-of-care mobile digital microscopy and deep learning for the detection of soil-transmitted helminths and Schistosoma haematobium,' Global Health Action, vol. 10, sup. 3, p. 1337325, 2017.",
         "[9] P. Ward, P. Dahlberg, O. Lagatie, et al., 'Affordable artificial intelligence-based digital pathology for neglected tropical diseases: A proof-of-concept for the detection of soil-transmitted helminths and Schistosoma mansoni eggs in Kato-Katz stool thick smears,' PLoS Neglected Tropical Diseases, vol. 16, no. 6, p. e0010500, 2022.",
         "[10] M. A. F. Ghazvini, M. R. K. Zanjani, and H. R. Pourghassem, 'Computer-aided diagnosis of human intestinal parasites in microscopic images: A review,' Computer Methods and Programs in Biomedicine, vol. 195, p. 105650, 2020.",
-        "[11] M. Hassan, A. Alqahtani, M. Elbedwehy, and A. S. Talaat, 'Automated detection of pinworm parasite eggs using YOLO convolutional block attention module for enhanced microscopic image analysis,' Frontiers in Bioengineering and Biotechnology, vol. 13, p. 1559987, 2025.",
-        "[12] J. De Wilde, P. Dahlberg, et al., 'Detecting soil-transmitted helminth and Schistosoma mansoni eggs in Kato-Katz stool smear microscopy images: A comprehensive in- and out-of-distribution evaluation of YOLOv7 variants,' PLoS Neglected Tropical Diseases, vol. 19, p. e0012890, 2025.",
+        "[11] M. Hassan, A. Alqahtani, M. Elbedwehy, and A. S. Talaat, 'Automated detection of pinworm parasite eggs using YOLO convolutional block attention module for enhanced microscopic image analysis,' Frontiers in Bioengineering and Biotechnology, vol. 13, p. 1559987, Oct. 2025.",
+        "[12] M. A. Mohammed, et al., 'Detecting soil-transmitted helminth and Schistosoma mansoni eggs in Kato-Katz stool smear microscopy images: A comprehensive in- and out-of-distribution evaluation of YOLOv7 variants,' PLoS Neglected Tropical Diseases, vol. 19, no. 7, p. e0012890, July 2025.",
         "[13] W. Lv, Y. Zhao, S. Xu, J. Wei, G. Wang, C. Lai, Q. Shen, and Q. Liu, 'DETRs Beat YOLOs on Real-time Object Detection,' in Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. (CVPR), 2024, pp. 16965–16974.",
         "[14] Roboflow Universe, 'Parasites v2 Microscopic Dataset,' 2024. [Online]. Available: https://universe.roboflow.com/roboflow-100/parasites-124gj.",
         "[15] G. Jocher, A. Chaurasia, and J. Qiu, 'Ultralytics YOLO,' 2024. [Online]. Available: https://github.com/ultralytics/ultralytics."
@@ -983,7 +916,7 @@ def create_manuscript_docx():
 
     # Save to workspace across multiple candidate filenames in case one is open in Word
     saved_paths = []
-    for fname in ["MANUSCRIPT_with_figures.docx", "MANUSCRIPT_v5.docx", "MANUSCRIPT.docx"]:
+    for fname in ["MANUSCRIPT_with_figures.docx", "MANUSCRIPT_v6.docx", "MANUSCRIPT_v5.docx", "MANUSCRIPT.docx"]:
         try:
             p = Path(fname)
             doc.save(p)
@@ -995,7 +928,7 @@ def create_manuscript_docx():
     # Also save to artifact directory
     artifact_dir = Path(r"C:\Users\Amit_Addi\.gemini\antigravity-ide\brain\4a0a2c54-36c0-4c2f-b27d-e617deb9a7ba")
     if artifact_dir.exists():
-        for art_fname in ["MANUSCRIPT_with_figures.docx", "MANUSCRIPT_v5.docx", "MANUSCRIPT.docx"]:
+        for art_fname in ["MANUSCRIPT_with_figures.docx", "MANUSCRIPT_v6.docx", "MANUSCRIPT.docx"]:
             try:
                 art_p = artifact_dir / art_fname
                 doc.save(art_p)

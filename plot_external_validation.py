@@ -30,20 +30,19 @@ ckpts = {
 base_dir = Path('E:/SpainWork/ConferencePaper/External vaildation')
 all_images = sorted(list(base_dir.glob('*/*.jpg')))
 
-# Granular evaluation using batch_size=16 to prevent GPU OOM
+# Granular evaluation across all 1,000 external images using batch_size=32
 eval_thresholds = [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60]
 curve_data = {m: [] for m in ckpts}
 
-sample_subset = all_images[::5] # 200 images evenly distributed across dataset
-print(f"Evaluating curve on {len(sample_subset)} images...")
+print(f"Evaluating curve on all {len(all_images)} external images...")
 
 for m_name, (ckpt_p, m_cls, color, ls) in ckpts.items():
     model = m_cls(ckpt_p)
     all_res_boxes = []
     
-    # Process in chunks of 16
-    for i in range(0, len(sample_subset), 16):
-        batch = [str(p) for p in sample_subset[i:i+16]]
+    # Process in chunks of 32
+    for i in range(0, len(all_images), 32):
+        batch = [str(p) for p in all_images[i:i+32]]
         with torch.no_grad():
             res = model.predict(batch, conf=0.05, imgsz=640, device=0, verbose=False)
         for r in res:
@@ -55,10 +54,13 @@ for m_name, (ckpt_p, m_cls, color, ls) in ckpts.items():
             else:
                 all_res_boxes.append((np.array([]), np.array([])))
                 
-    # Calculate sensitivity across thresholds
+    # Calculate sensitivity across thresholds on all 1,000 images
     for th in eval_thresholds:
         hit = sum(1 for clss, confs in all_res_boxes if any((c == 1 and s >= th) for c, s in zip(clss, confs)))
-        curve_data[m_name].append((hit / len(sample_subset)) * 100.0)
+        rate = (hit / len(all_images)) * 100.0
+        curve_data[m_name].append(rate)
+        if th in [0.15, 0.25, 0.35, 0.50]:
+            print(f"  {m_name} @ {th:.2f}: {rate:.2f}%")
 
 # Create publication figure
 fig = plt.figure(figsize=(18, 12), dpi=300)
@@ -114,8 +116,8 @@ ax_c = fig.add_subplot(gs[1, :])
 ax_c.axis('off')
 
 # Select 2 external slides
-sample_external_1 = all_images[12]
-sample_external_2 = all_images[45]
+sample_external_1 = all_images[15]
+sample_external_2 = all_images[100]
 
 CLASS_NAMES = [
     'Ancylostoma', 'Ascaris', 'Enterobius',

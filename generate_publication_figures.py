@@ -102,15 +102,15 @@ def generate_figure2():
     for ann in coco['annotations']:
         ann_by_img.setdefault(ann['image_id'], []).append(ann)
         
-    # Select 4 representative images
-    # 1. Multi-egg Enterobius
-    # 2. Hookworm Ancylostoma
-    # 3. High-density Trichuris
-    # 4. Large Fasciola
+    # Select 4 representative images from test split
+    # 1. Multi-egg Enterobius (Pinworm)
+    # 2. Thin-Shelled Hookworm (Ancylostoma Spp, img_id 4)
+    # 3. Mammillated Roundworm (Ascaris lumbricoides, img_id 22 - clean, unwatermarked)
+    # 4. Large Operculated Fluke (Fasciola hepatica, img_id 6)
     selected = [
         (0, "Multi-Egg Field (Enterobius vermicularis)"),
-        (2, "Faint Thin-Shelled Hookworm (Ancylostoma Spp)"),
-        (8, "Clustered Mixed Ovum Field (Trichuris trichiura)"),
+        (4, "Thin-Shelled Hookworm (Ancylostoma Spp)"),
+        (22, "Mammillated Ovum (Ascaris lumbricoides)"),
         (6, "Large Fluke Ovum (Fasciola hepatica)")
     ]
     
